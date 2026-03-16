@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow mx-auto mt-5" style="max-width: 500px;">
+    <div class="card-header bg-warning text-center"><h3>Editar Registro</h3></div>
+    <div class="card-body">
+        <form action="{{ url_for('actualizar', id=servicio.id) }}" method="POST">
+            <div class="mb-3">
+                <label>Nombre:</label>
+                <input type="text" name="nombre" class="form-control" value="{{ servicio.nombre }}">
+            </div>
+            <div class="mb-3">
+                <label>Especialidad:</label>
+                <input type="text" name="especialidad" class="form-control" value="{{ servicio.Especialidad }}">
+            </div>
+            <div class="mb-3">
+                <label>Costo:</label>
+                <input type="number" name="costo" step="0.01" class="form-control" value="{{ servicio.precio }}">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Actualizar Datos</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow mx-auto mt-5" style="max-width: 500px;">
+    <div class="card-header bg-primary text-white text-center"><h3>Nueva Cita Médica</h3></div>
+    <div class="card-body">
+        <form action="{{ url_for('agregar') }}" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nombre del Paciente:</label>
+                <input type="text" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Especialidad:</label>
+                <input type="text" name="especialidad" class="form-control" placeholder="Ej: Médico, Odontólogo" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Costo:</label>
+                <input type="number" name="costo" step="0.01" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Guardar en XAMPP</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+    
