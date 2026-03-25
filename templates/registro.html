@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Registrar Usuario - Clínica Lojano</h2>
+    <form action="{{ url_for('registro') }}" method="POST">
+        <div class="mb-3">
+            <label>Nombre Completo</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Correo Electrónico</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Contraseña</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+    </form>
+    <p class="mt-3">¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión aquí</a></p>
+</div>
+{% endblock %}
