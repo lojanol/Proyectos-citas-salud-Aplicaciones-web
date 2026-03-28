@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow mx-auto mt-5" style="max-width: 500px;">
+    <div class="card-header bg-warning text-center"><h3>Editar Producto</h3></div>
+    <div class="card-body">
+        <form action="{{ url_for('editar_producto', id=producto.id_producto) }}" method="POST">
+            <div class="mb-3">
+                <label>Nombre del Producto:</label>
+                <input type="text" name="nombre" class="form-control" value="{{ producto.nombre }}" required>
+            </div>
+            <div class="mb-3">
+                <label>Precio:</label>
+                <input type="number" name="precio" step="0.01" class="form-control" value="{{ producto.precio }}" required>
+            </div>
+            <div class="mb-3">
+                <label>Stock:</label>
+                <input type="number" name="stock" class="form-control" value="{{ producto.stock }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Actualizar Producto</button>
+            <a href="{{ url_for('lista_productos') }}" class="btn btn-secondary w-100 mt-2">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
